@@ -4,28 +4,29 @@ Cidades:
 Uma cidade pode ser o lar de vários heróis e vilões.
 
 Heróis:
-Um herói pode ter, no máximo e no mínimo um parceiro, formando uma dupla dinâmica.
+Um herói pode ter, no máximo um parceiro, formando uma dupla dinâmica.
 Cada herói deve pertencer a uma cidade existente no sistema.
 
 Vilões:
+Um Vilão pode ter, no máximo um parceiro, formando uma dupla maligna.
 Um vilão deve ser associado a uma cidade existente no sistema.
 
 Formação da Liga da Justiça:
 A Liga da Justiça é formada por heróis e seus parceiros unidos para combater o crime.
 
 Combates entre Heróis e Vilões:
-Um herói pode enfrentar vários vilões, e um vilão pode ser combatido por diferentes heróis.
+Um herói pode enfrentar vários vilões e vice versa.
 
 */
 
 
 -------------------------------------- 
 
-DROP DATABASE Fabula;
+DROP DATABASE liga_da_justica;
 
-CREATE DATABASE Fabula;
+CREATE DATABASE liga_da_justica;
 
-USE Fabula;
+USE liga_da_justica;
 
 -------------------------------------- 
 
@@ -42,8 +43,8 @@ identidadeSecreta VARCHAR(45) NOT NULL,
 poder VARCHAR(200) NOT NULL,
 historia VARCHAR (300) NOT NULL,
 descricao VARCHAR(200) NOT NULL,
-fkParceiro INT,
-CONSTRAINT fkParceiro FOREIGN KEY (fkParceiro)
+fkParceiroH INT,
+CONSTRAINT fkParceiroH FOREIGN KEY (fkParceiroH)
 REFERENCES heroi (idHeroi),
 fkCidade INT NOT NULL,
 CONSTRAINT fkCidade FOREIGN KEY (fkCidade)
@@ -57,21 +58,25 @@ identidadeSecreta VARCHAR(45) NOT NULL,
 poder VARCHAR(200) NOT NULL,
 historia VARCHAR(300) NOT NULL,
 descricao VARCHAR(200) NOT NULL,
+fkParceiroV INT,
+CONSTRAINT fkParceiroV FOREIGN KEY (fkParceiroV)
+REFERENCES vilao (idVilao),
 fkCidade INT NOT NULL,
 CONSTRAINT fkCidadeVilao FOREIGN KEY (fkCidade)
 REFERENCES cidade (idCidade)
 );
 
-CREATE TABLE ligaDaJustica (
+CREATE TABLE combate (
+idCombate int auto_increment,
 fkHeroi INT NOT NULL,
 CONSTRAINT fkHeroi FOREIGN KEY (fkHeroi)
 REFERENCES heroi (idHeroi),
-fkParceiro INT,
-CONSTRAINT fkParceiroLiga FOREIGN KEY (fkParceiro)
-REFERENCES heroi (idHeroi),
-fkVilao INT NOT NULL,
+fkVilao INT,
 CONSTRAINT fkVilao FOREIGN KEY (fkVilao)
-REFERENCES vilao (idVilao)
+REFERENCES vilao (idVilao),
+vencedor varchar(45),
+constraint chkVencedor check (vencedor in ('vilão', 'heroi')),
+primary key (idCombate, fkHeroi, fkVilao)
 );
 
 -------------------------------------- 
