@@ -1,25 +1,22 @@
- /* Regra de Negócio: Universo dos Heróis
+ /* Regra de Negócio: Universo dos Heróis - Liga da Justiça
+ 
+Formação da Liga da Justiça:
+A Liga da Justiça é formada por heróis e seus parceiros unidos para combater Vilões.
 
 Cidades:
 Uma cidade pode ser o lar de vários heróis e vilões.
+Um vilão ou um Herói só pode pertencer a no maximo uma cidade.
 
-Heróis:
-Um herói pode ter, no máximo um parceiro, formando uma dupla dinâmica.
-Cada herói deve pertencer a uma cidade existente no sistema.
+Heróis & Vilões:
+Vilões & Heróis podem ter no máximo um parceiro, formando uma dupla dinâmica.
 
-Vilões:
-Um Vilão pode ter, no máximo um parceiro, formando uma dupla maligna.
-Um vilão deve ser associado a uma cidade existente no sistema.
+Combates:
+Vários Heróis pode enfrentar vários Vilões, e vários Vilões podem enfrentar vários Heróis.
 
-Formação da Liga da Justiça:
-A Liga da Justiça é formada por heróis e seus parceiros unidos para combater o crime.
-
-Combates entre Heróis e Vilões:
-Um herói pode enfrentar vários vilões e vice versa.
+Poderes:
+Vilões & Heróis podem ter vários poderes diferentes.
 
 */
-
-
 -------------------------------------- 
 
 DROP DATABASE liga_da_justica;
@@ -40,14 +37,13 @@ CREATE TABLE heroi (
 idHeroi INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 identidadeSecreta VARCHAR(45) NOT NULL,
-poder VARCHAR(200) NOT NULL,
 historia VARCHAR (300) NOT NULL,
 descricao VARCHAR(200) NOT NULL,
 fkParceiroH INT,
 CONSTRAINT fkParceiroH FOREIGN KEY (fkParceiroH)
 REFERENCES heroi (idHeroi),
 fkCidade INT NOT NULL,
-CONSTRAINT fkCidade FOREIGN KEY (fkCidade)
+CONSTRAINT fkCidadeH FOREIGN KEY (fkCidade)
 REFERENCES cidade (idCidade)
 );
 
@@ -55,14 +51,13 @@ CREATE TABLE vilao (
 idVilao INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45) NOT NULL,
 identidadeSecreta VARCHAR(45) NOT NULL,
-poder VARCHAR(200) NOT NULL,
 historia VARCHAR(300) NOT NULL,
 descricao VARCHAR(200) NOT NULL,
 fkParceiroV INT,
 CONSTRAINT fkParceiroV FOREIGN KEY (fkParceiroV)
 REFERENCES vilao (idVilao),
 fkCidade INT NOT NULL,
-CONSTRAINT fkCidadeVilao FOREIGN KEY (fkCidade)
+CONSTRAINT fkCidadeV FOREIGN KEY (fkCidade)
 REFERENCES cidade (idCidade)
 );
 
@@ -71,12 +66,34 @@ idCombate int auto_increment,
 fkHeroi INT NOT NULL,
 CONSTRAINT fkHeroi FOREIGN KEY (fkHeroi)
 REFERENCES heroi (idHeroi),
-fkVilao INT,
+fkVilao INT NOT NULL,
 CONSTRAINT fkVilao FOREIGN KEY (fkVilao)
 REFERENCES vilao (idVilao),
-vencedor varchar(45),
-constraint chkVencedor check (vencedor in ('vilão', 'heroi')),
+vencedor varchar(45) NOT NULL,
+constraint chkVencedor check (vencedor in ('Vilão', 'Herói')),
 primary key (idCombate, fkHeroi, fkVilao)
+);
+
+CREATE TABLE poderes (
+idPoder int primary key auto_increment,
+nomePoder varchar(50) not null,
+descricao varchar(200) not null
+);
+
+create table poderVilao (
+fkVilao int,
+constraint fkVilaoPoder foreign key (fkVilao) references vilao (idVilao),
+fkPoder int,
+constraint fkPoderVilao foreign key (fkPoder) references poderes (idPoder),
+primary key (fkVilao, fkPoder)
+);
+
+create table poderHeroi (
+fkHeroi int,
+constraint fkHeroiPoder foreign key (fkHeroi) references heroi (idHeroi),
+fkPoder int,
+constraint fkPoderHeroi foreign key (fkPoder) references poderes (idPoder),
+primary key (fkHeroi, fkPoder)
 );
 
 -------------------------------------- 
