@@ -156,40 +156,43 @@ o lanterna enfrentava um alien feroz, que ô tinha destroçado. ','Possui um tra
 (null,'Capitão Bumerangue','George "Digger" Harkness,','Controla um Bumerangue ','filho ilegítimo de um soldado americano e uma mulher australiana, cresceu em extrema pobreza, mas desenvolveu um talento inato na 
 confecção de bumerangues e aprendeu a usá-los brilhantemente como armas','Traje azul com um bumerangue', 4 */
 
+
 -- Heróis
 INSERT INTO heroi VALUES
-(null,'Lanterna Verde','Hal Jordan','Poder do Anel da Tropa dos Lanternas Verde','Hal Jordan é um piloto de caça, um membro e, ocasionalmente, líder de uma força policial intergaláctica chamada tropa dos Lanternas Verdes. Ele luta contra o mal através do universo com um anel que lhe dá uma variedade de superpoderes','Alto, branco, cabelos curtos e castanhos, uniforme verde e preto', null, 1),
+(null, 'Lanterna Verde', 'Hal Jordan', 'Hal Jordan é um piloto de caça, um membro e, ocasionalmente, líder de uma força policial intergaláctica chamada tropa dos Lanternas Verdes. Ele luta contra o mal através do universo com um anel que lhe dá uma variedade de superpoderes', 'Alto, branco, cabelos curtos e castanhos, uniforme verde e preto', null, 1),
 
-(null,'Cyborg','Victor Stone','','Victor era um atleta, que num acidente perdeu grande parte de seu corpo, e graças ao seu pai cientista, conseguiu substituir a massa perdida por componentes robóticos, e com isso acabou virando um ciborgue.', 'Alto, negro, corpo de máquina', null, 2),
+(null, 'Cyborg', 'Victor Stone', 'Victor era um atleta, que num acidente perdeu grande parte de seu corpo, e graças ao seu pai cientista, conseguiu substituir a massa perdida por componentes robóticos, e com isso acabou virando um ciborgue.', 'Alto, negro, corpo de máquina', null, 2),
 
-(null,'Robin','Dick Grayson','Artes Marciais','Após sua família morrer em acidente de circo, ele é adotado pelo Bruce Wayne, vulgo Batman','Traje vermelho, preto e capa amarela',null, 2),
+(null, 'Robin', 'Dick Grayson', 'Após sua família morrer em acidente de circo, ele é adotado pelo Bruce Wayne, vulgo Batman', 'Traje vermelho, preto e capa amarela', null, 1),
 
-(null,'Super-Man','Clark Joseph Kent','','Um extraterrestre que foi enviado para terra quando era um recém-nascido pois seu planeta natal estava sendo destruído','Roupa azul, capa vermelha e um S no peito', null, 3),
+(null, 'Super-Man', 'Clark Joseph Kent', 'Um extraterrestre que foi enviado para terra quando era um recém-nascido, pois seu planeta natal estava sendo destruído', 'Roupa azul, capa vermelha e um S no peito', null, 3),
 
-(null,'Flash','Barry Allen','Super Velocidade','Após ser atingido por um raio durante a explosão de acelerador de partículas, o mesmo ganhou super velocidade','Roupa vermelha bordada com um raio no peito', null, 4),
+(null, 'Flash', 'Barry Allen', 'Após ser atingido por um raio durante a explosão de acelerador de partículas, o mesmo ganhou super velocidade', 'Roupa vermelha bordada com um raio no peito', null, 4),
 
-(null,'Aquaman','Arthur Curry','Fala com animais marinhos, respirar em baixo da água e ter vantagens subaquáticas','Herdeiro do trono de Atlântida','Escamas Douradas e um Tridente Dourado', null, 5),
+(null, 'Aquaman', 'Arthur Curry', 'Herdeiro do trono de Atlântida', 'Escamas Douradas e um Tridente Dourado', null, 5),
 
-(null,'Mulher-Maravilha','Diana','Super-força, Invulnerabilidade, Fator de Cura e Sentidos Aprimorados','Filha da Rainha Hipólita da civilização de amazonas da ilha paradisíaca Themyscira, a Princesa Diana foi mandada como Mulher-Maravilha ao Mundo dos Homens para propagar a paz, sendo a defensora da verdade e da vida na luta entre os homens e o firmamento, entre os mortais e os deuses.','Traje vermelho, dourado e azul, braceletes dourados e chicote', null, 6),
+(null, 'Mulher-Maravilha', 'Diana', 'Filha da Rainha Hipólita da civilização de amazonas da ilha paradisíaca Themyscira, a Princesa Diana foi mandada como Mulher-Maravilha ao Mundo dos Homens para propagar a paz, sendo a defensora da verdade e da vida na luta entre os homens e o firmamento, entre os mortais e os deuses.', 'Traje vermelho, dourado e azul, braceletes dourados e chicote', null, 6),
 
-(null,'Batman','Bruce Wayne','Milionário','Após seus pais serem assassinados em um beco na sua infância, quando cresceu, decidiu se tornar um justiceiro',
-'Seu uniforme preto reflete um homem-morcego', 3, 2);
+(null, 'Batman', 'Bruce Wayne', 'Após seus pais serem assassinados em um beco na sua infância, quando cresceu, decidiu se tornar um justiceiro', 'Seu uniforme preto reflete um homem-morcego', null, 3);
+
+
+
 
 -- Vilões
 INSERT INTO vilao VALUES
-(null,'Coringa','Arthur Fleck','Não tem','Acompanha um comediante fracassado que é contratado pela máfia para roubar a usina nuclear em que trabalhava','Aparência de um palhaço', null, 2),
+(null,'Coringa','Arthur Fleck','Acompanha um comediante fracassado que é contratado pela máfia para roubar a usina nuclear em que trabalhava','Aparência de um palhaço', null, 2),
 
-(null,'Lanterna Amarela','Sinestro','Poder da Lanterna Amarela','Thaal Sinestro era um arqueólogo em seu planeta natal, Korugar, quando viu um Lanterna Verde cair numa escavação próxima, o lanterna enfrentava um alienígena feroz, que o tinha destroçado. ','Possui um traje amarelo, uma pele avermelhada', null, 1),
+(null,'Lanterna Amarela','Sinestro','Thaal Sinestro era um arqueólogo em seu planeta natal, Korugar, quando viu um Lanterna Verde cair numa escavação próxima, o lanterna enfrentava um alienígena feroz, que o tinha destroçado. ','Possui um traje amarelo, uma pele avermelhada', null, 1),
 
-(null,'Ares','Ares','Fisiologia Divina','Ares era o Velho Deus da Guerra, e o filho mais temido de Zeus, que era adorado pelos antigos gregos e romanos ','Tem uma armadura grega, e dentro tem apenas uma sombra', null, 5),
+(null,'Ares','Ares','Ares era o Velho Deus da Guerra, e o filho mais temido de Zeus, que era adorado pelos antigos gregos e romanos ','Tem uma armadura grega, e dentro tem apenas uma sombra', null, 5),
 
-(null,'Capitão Bumerangue','George "Digger" Harkness','Controla um Bumerangue','Filho ilegítimo de um soldado americano e uma mulher australiana, cresceu em extrema pobreza, mas desenvolveu um talento');
+(null,'Capitão Bumerangue','George "Digger" Harkness','Filho ilegítimo de um soldado americano e uma mulher australiana, cresceu em extrema pobreza, mas desenvolveu um talento', 'Veste um traje azul e vermelho, muitas vezes decorado com boomerangs', null, 4);
 
 
 INSERT INTO combate VALUES 
 (1, 1, 2, 'Vilão'),
-(1, 8, 1, 'Heróis'),
-(1, 5, 3, 'Heróis');
+(1, 8, 1, 'Herói'),
+(1, 5, 3, 'Herói');
 
 insert into poderes values 
 (null, 'Lanterna Verde', 'Poder do Anel da Tropa dos Lanternas Verde'),
