@@ -252,7 +252,7 @@ insert into poderHeroi values
 SELECT * FROM cidade;
 SELECT * FROM heroi;
 SELECT * FROM vilao;
-select * from poderes;
+SELECT * FROM poderes;
 SELECT * FROM combate;
-select * from poderHeroi;
-select * from poderVilao;
+SELECT * FROM poderHeroi;
+SELECT * FROM poderVilao;
