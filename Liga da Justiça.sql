@@ -69,7 +69,7 @@ REFERENCES heroi (idHeroi),
 fkVilao INT NOT NULL,
 CONSTRAINT fkVilao FOREIGN KEY (fkVilao)
 REFERENCES vilao (idVilao),
-vencedor varchar(45) NOT NULL,
+vencedor varchar(45),
 constraint chkVencedor check (vencedor in ('Vilão', 'Herói')),
 primary key (idCombate, fkHeroi, fkVilao)
 );
