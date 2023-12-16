@@ -137,6 +137,8 @@ INSERT INTO heroi VALUES
 
 (null, 'Batman', 'Bruce Wayne', 'Após seus pais serem assassinados em um beco na sua infância, quando cresceu, decidiu se tornar um justiceiro', 'Seu uniforme preto reflete um homem-morcego', null, 3);
 
+UPDATE heroi SET fkParceiroH = 3 WHERE idHeroi = 8;
+
 --------------------------------------
 
 -- Vilões
